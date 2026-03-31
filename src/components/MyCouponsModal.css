@@ -1,0 +1,291 @@
+.my-coupons-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+}
+
+.my-coupons-modal--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.my-coupons-modal__mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.35s ease;
+}
+
+.my-coupons-modal--visible .my-coupons-modal__mask {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.my-coupons-modal__body {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  height: 500px;
+  background: #f6f7fb;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.my-coupons-modal__body--visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.my-coupons-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #111827;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.my-coupons-modal__close:hover {
+  transform: rotate(90deg);
+}
+
+.my-coupons-modal__title {
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.my-coupons-modal__tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 6px;
+  background: #fff;
+  border-radius: 14px;
+}
+
+.my-coupons-modal__tab {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.my-coupons-modal__tab.active {
+  background: linear-gradient(120deg, var(--primary) 0%, var(--primary-2) 100%);
+  color: #fff;
+}
+
+.my-coupons-modal__list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+  min-height: 200px;
+  max-height: 300px;
+}
+
+.my-coupons-modal__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  min-height: 200px;
+}
+
+.empty-icon {
+  font-size: 72px;
+  margin-bottom: 20px;
+}
+
+.my-coupons-modal__empty p {
+  color: var(--muted);
+  font-size: 16px;
+  margin: 0 0 24px;
+}
+
+.my-coupons-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 20px;
+}
+
+.my-coupons-modal__summary {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.my-coupon-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.my-coupon-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.my-coupon-card--available {
+  border-left: 5px solid #10b981;
+}
+
+.my-coupon-card--used {
+  border-left: 5px solid #d1d5db;
+  opacity: 0.6;
+}
+
+.my-coupon-card__left {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-radius: 12px;
+}
+
+.my-coupon-card--used .my-coupon-card__left {
+  background: #f3f4f6;
+}
+
+.my-coupon-card__symbol {
+  font-size: 16px;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.my-coupon-card--used .my-coupon-card__symbol {
+  color: #9ca3af;
+}
+
+.my-coupon-card__amount {
+  font-size: 28px;
+  font-weight: 800;
+  color: #10b981;
+}
+
+.my-coupon-card--used .my-coupon-card__amount {
+  color: #9ca3af;
+}
+
+.my-coupon-card__right {
+  flex: 1;
+  min-width: 0;
+}
+
+.my-coupon-card__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.my-coupon-card__condition {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.my-coupon-card__expiry {
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: 6px;
+}
+
+.my-coupon-card--used .my-coupon-card__expiry {
+  color: var(--muted);
+}
+
+.my-coupon-card__use {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(120deg, #10b981 0%, #34d399 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+  white-space: nowrap;
+}
+
+.my-coupon-card__use:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+.my-coupon-card__use:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .my-coupons-modal__body {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 24px 24px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 16px 32px;
+    transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .my-coupons-modal__body--visible {
+    transform: translateY(0);
+  }
+
+  .my-coupon-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .my-coupon-card__use {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}

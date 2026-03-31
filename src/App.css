@@ -310,6 +310,9 @@
 }
 
 .coupon-card__amount {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
   text-align: center;
 }
 
@@ -320,7 +323,7 @@
 }
 
 .coupon-card__amount .number {
-  display: block;
+  display: inline;
   font-size: 38px;
   line-height: 1.1;
   color: #ff5f52;
@@ -328,8 +331,8 @@
 }
 
 .coupon-card__amount .condition {
-  display: inline-block;
-  margin-top: 6px;
+  display: inline;
+  margin-left: 8px;
   font-size: 13px;
   color: var(--muted);
 }
@@ -716,7 +719,7 @@
   position: relative;
   width: 100%;
   max-width: 560px;
-  max-height: 85vh;
+  height: 500px;
   background: #f6f7fb;
   border-radius: 24px;
   padding: 28px;
@@ -793,6 +796,8 @@
   flex: 1;
   overflow-y: auto;
   padding-right: 6px;
+  min-height: 200px;
+  max-height: 300px;
 }
 
 .my-coupons-modal__empty {
@@ -802,6 +807,7 @@
   justify-content: center;
   padding: 60px 20px;
   text-align: center;
+  min-height: 200px;
 }
 
 .empty-icon {
