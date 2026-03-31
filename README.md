@@ -1,5 +1,8 @@
 # AI H5 优惠券领取页面
 
+[![Deploy](https://github.com/Wang9977/ai-h5-app/actions/workflows/deploy.yml/badge.svg)](https://Wang9977.github.io/ai-h5-app)
+[![Node Version](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](https://nodejs.org/)
+
 一个精美的 H5 优惠券领取页面，支持领取、管理和使用优惠券功能。
 
 ## 功能特性
@@ -11,11 +14,15 @@
 - **响应式设计** - 完美适配 PC 端和移动端
 - **流畅动画** - 精心设计的过渡动画，提升用户体验
 
+## 在线预览
+
+访问：[https://Wang9977.github.io/ai-h5-app](https://Wang9977.github.io/ai-h5-app)
+
 ## 技术栈
 
 - React 19
 - TypeScript
-- Vite
+- Vite 7
 - CSS3
 
 ## 快速开始
@@ -53,6 +60,10 @@ src/
 | 新人专享券 | ¥30 | 满199可用 |
 | 限时满减券 | ¥60 | 满399可用 |
 | 周末加码券 | ¥15 | 满99可用 |
+
+## 自动部署
+
+推送到 `dev` 分支会自动构建部署到 GitHub Pages。
 
 ## 许可证
 
