@@ -45,10 +45,30 @@ npm run lint
 
 ```
 src/
-├── App.tsx      # 主组件，包含所有业务逻辑
-├── App.css      # 样式文件
-├── main.tsx     # 入口文件
-└── assets/      # 静态资源
+├── components/           # 组件
+│   ├── CouponApp.tsx    # 主应用组件
+│   ├── CouponApp.css    # 主应用样式
+│   ├── CouponCard.tsx   # 优惠券卡片
+│   ├── CouponCard.css   # 卡片样式
+│   ├── CouponDetail.tsx # 优惠券详情
+│   ├── CouponList.tsx   # 优惠券列表
+│   ├── DetailModal.tsx  # 详情弹窗
+│   ├── DetailModal.css  # 弹窗样式
+│   ├── Modal.tsx        # 通用弹窗
+│   ├── Modal.css        # 弹窗样式
+│   ├── MyCouponCard.tsx # 我的优惠券卡片
+│   ├── MyCouponsModal.tsx # 我的优惠券弹窗
+│   ├── MyCouponsModal.css # 弹窗样式
+│   ├── Toast.tsx        # 提示组件
+│   └── Toast.css        # 提示样式
+├── constants/            # 常量
+│   └── coupons.ts       # 优惠券数据
+├── hooks/               # 自定义 Hooks
+│   ├── useCouponStates.ts # 优惠券状态管理
+│   └── useToast.ts      # Toast 提示
+├── types.ts             # 类型定义
+├── App.tsx              # 入口
+└── main.tsx             # 入口文件
 ```
 
 ## 优惠券数据
